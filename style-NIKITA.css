@@ -334,7 +334,7 @@
     margin-top: -10px;
 }
 .section--devices {
-    background: url("../images/Nikita/dev.jpg");
+    background: url("Nikita/dev.jpg");
     opacity: 0.9;
     background-size: cover;
     padding-bottom: 0;
