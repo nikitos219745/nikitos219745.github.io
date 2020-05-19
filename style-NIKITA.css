@@ -7,7 +7,7 @@
     margin: 0 auto;
 }
 .header__logo {
-    color: #ffefc1;
+    color: #ff5a00;
     font-weight: 700;
     font-size: 40px;
     font-family: "Eras Demi ITC";
@@ -24,35 +24,72 @@
     left: 0;
     z-index: 1000;
     height: 100px;
+    background-color: orange;
 }
 .header__iner {
     align-items: center;
     display: flex;
     padding: 35px 0;
     justify-content: space-between;
+
 }
+
+
+.header--fixed{
+    padding: 10px 0;
+    background-color: #8019bd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 0 ,0);
+}
+
+
 .nav {
-    display: flex;
+    display: block;
     font-size: 15px;
     font-weight: 600;
     text-transform: uppercase;
 }
 .nav__link {
+    position: relative;
     margin-left: 45px;
     text-decoration: none;
     color: #ffffff;
     transition: color 0.2s linear;
 }
+.nav__link:after{
+    content: "";
+    display: block;
+    margin-top: 3px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
 .nav__link:hover {
     color: #561a33;
+}
+.nav__link:hover:after{
+    display: block;
+
 }
 .nav__link:first-child {
     margin-left: 0;
 }
-.nav__toggle
-{
+.nav__toggle {
+
+    display: none;
+    cursor: pointer;
     border: none;
-    background-color: black;
+    background: none;
+    margin-top: 5px;
+    border: none;
     padding: 40px 0;
     text-decoration: none;
     position: absolute;
@@ -61,23 +98,27 @@
     width: 30px;
     right: 15px;
 }
+
 .nav__toggle__item:before,
 .nav__toggle__item:after{
     content: "";
+    border-radius: 5px;
     width: 100%;
-    height: 3px;
+    height: 3px ;
+    background-color: white;
     position: absolute;
-    background-color:#b5eae0 ;
-    position: absolute;
+    left: 0;
+    z-index: 3;
 }
 .nav__toggle__item:before{
     top: -8px;
-    
+
 }
 .nav__toggle__item:after{
     bottom: -8px;
 }
 .nav__toggle__item{
+
     position: absolute;
     top: 0;
     right: 0;
@@ -87,14 +128,26 @@
     width: 100%;
     height: 3px;
     margin: auto;
-    background-color: #FFD1EAB5;
+    background-color: white;
+}
+.nav__toggle.active .nav__toggle__item{
+    background-color: transparent;
+}
+.nav__toggle.active .nav__toggle__item:before{
+transform-origin: left top;
+transform: rotate(45deg) translateX(-2px);
+
+}
+.nav__toggle.active .nav__toggle__item:after{
+    transform-origin: left top;
+    transform: rotate(-45deg) translateX(-5px);
 }
 .intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #FF391919;
-    height: 5px;
+
+
     width: 7000px;
     opacity: .6;
     padding-top: 100px;
@@ -150,8 +203,9 @@
 }
 .features {
     display: flex;
-    margin: 0px;
-    margin-left: 80px;
+    top: 50%;
+    transform: translateX(+50%);
+
     background: #eba606;
     width: 400px;
     height: 500px;
@@ -354,15 +408,13 @@
     right: 0;
     z-index: 1;
 }
-.we__do__img {
-    margin-left: 150px;
-}
+
 .we__do {
     display: flex;
     margin-top: 50px;
 }
 .we__do__item {
-    width: 50%;
+
 }
 .accordion__icon {
     width: 40px;
@@ -396,18 +448,7 @@
     z-index: 1;
     transform: translateY(-50%);
 }
-.accordion__header:after {
-    content: "";
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-top: 2px solid #cc2643;
-    border-right: 2px solid #cc2643;
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    margin-left: 500px;
-}
+
 .section--gray {
     background-color: #477474;
     height:120px;
@@ -469,6 +510,10 @@
 }
 .reviews__btn--next {
     right: 0;
+}
+.photochka:hover{
+    transform: scale(0.9);
+    transition: scale 0.9s linear;
 }
 @media (max-width: 576px) {
         .about__item{
@@ -557,6 +602,9 @@
             position: absolute;
             margin-left: 150px;
         }
+        .accordion_content{
+            margin-right: -5px;
+        }
 
 }
 
@@ -640,6 +688,15 @@
     .nav{
         padding-right: 20px;
     }
+}
+
+.header--fixed{
+    padding: 10px 0;
+    background-color: #8019bd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate3d(0, 0 ,0);
 }
 
 
